@@ -1,0 +1,202 @@
+<!-- Store this code in 'login.html' file inside the 'templates' folder -->
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> Feedback </title>
+		<script src="https://kit.fontawesome.com/8c3e50d80c.js" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<style>
+			#header ul li{
+    display: inline;
+    position:relative;
+    top:5px;
+}
+#header ul li a{
+	border:2px solid;
+	font-size:15px;
+	float:right;
+	background-color:#ff80aa;
+	width:80px;
+	height:40px;
+	text-align:center;
+	margin:0px 20px 4px 20px;
+	font-weight:bold;
+	line-height:40px;
+	border-radius:50px;
+	transition-property:all;
+	transition-duration:0.4s;
+	transition-timing-function:linear;
+}	
+#header ul li a{
+	text-decoration:none;
+	color:white;
+}
+#header ul li a:hover{
+        background-color:#ffa64d;
+        color:#994d00;
+		border-color: #994d00;	
+}
+#header ul li a:active{
+background-color:lightgreen;
+}
+			footer {
+  text-align: center;
+  padding: 3px;
+  width: 100%;
+  height: 100px;
+  background-color: rgba(0, 0, 255, 0.2);
+  color: black;
+display:block;
+margin-top: 200px;
+}
+.checked {
+  color: orange;
+}
+footer {
+  text-align: center;
+  padding: 3px;
+  width: 100%;
+  height: 100px;
+  background-color: rgba(0, 0, 255, 0.2);
+  color: black;
+display:block;
+margin-top: 200px;
+}
+		</style>		
+	</head>
+	<body style="background-image: url('https://media.istockphoto.com/photos/green-vintage-paper-background-picture-id1370125170?b=1&k=20&m=1370125170&s=170667a&w=0&h=SfzWL2txkVK4XnkNuFYnTEo_rA4qzAMyjJ6hJLfqRfU='); background-size: 200% 200%;">
+		<div id="header" style="background-color: rgba(0, 0, 255, 0.2); width: 100%; height: 50px;">
+			<ul>
+				<li><a href="{{url_for('contact_us')}}">Contact us</a></li>
+				<li><a href="http://127.0.0.1:8080/login/templates/index.php">To-do</a></li>
+				<li><a href="{{url_for('account')}}">Account</a></li>
+				<li><a href="{{url_for('home')}}">Home</a></li>
+			</ul>
+		</div><br/><br/>
+		<div align="center">
+			<div class="msg" align = "center" style="font-family: Arial, Helvetica, sans-serif;font-size: 20px;padding-bottom: 30px;">{{ msg }}</div>
+		<div align="center" class="border" style="background-color: whitesmoke;border-color: whitesmoke;width: 600px;height:880px;border-radius: 50px;">
+			<div class="header" style="padding:20px;">
+				<h1 class="word" style="font-family: Arial, sans-serif; color: #8080ff;">Feedback</h1>
+				<h4 class="word" style="font-family: Arial, sans-serif; color: #8080ff;">We would like your feedback to improve our website</h4>
+			</div>
+			<h2 class="word">
+				<form action="{{ url_for('feedback') }}" method="post">
+					<fieldset style="width: 500px; border-radius: 20px; color: grey;">
+						<legend style="color:grey;">Rating</legend>
+						<div id = "stars" style="margin-bottom: 40px;">
+							<span class="fa fa-star" style="color:black;"></span>
+							<span class="fa fa-star" style="color:black;"></span>
+							<span class="fa fa-star" style="color:black;"></span>
+							<span class="fa fa-star" style="color:black;"></span>
+							<span class="fa fa-star" style="color:black;"></span>
+						</div>
+						<input type="radio" name="rating" id="rating1" value="rating1" onchange="getValue(this)" style="margin-right: 5px;"><span style="color:black;">1</span></input>
+						<input type="radio" name="rating" id="rating2" value="rating2" onchange="getValue(this)" style="margin-right: 5px;"><span style="color:black;">2</span></input>
+						<input type="radio" name="rating" id="rating3" value="rating3" onchange="getValue(this)" style="margin-right: 5px;"><span style="color:black;">3</span></input>
+						<input type="radio" name="rating" id="rating4" value="rating4" onchange="getValue(this)" style="margin-right: 5px;"><span style="color:black;">4</span></input>
+						<input type="radio" name="rating" id="rating5" value="rating5" onchange="getValue(this)" style="margin-right: 5px;"><span style="color:black;">5</span></input></br></br>
+					  </fieldset></br></br>
+
+					  <fieldset style="width: 500px; border-radius: 20px; color: grey;">
+						<legend style="color:grey;">Feedback Category</legend>
+						<input type="radio" name="category" id="category1" value="suggestion" style="margin-right: 5px;"><span style="color:black;">Suggestion</span></input>
+						<input type="radio" name="category" id="category2" value="compliment" style="margin-right: 5px;"><span style="color:black;">Compliment</span></input>
+						<input type="radio" name="category" id="category3" value="problem" style="margin-right: 5px;"><span style="color:black;">Problem</span></input></br></br>
+					  </fieldset></br></br>
+					  <p style="color: grey;margin-left: -280px;">Provide Feedback Below</p>
+          <textarea id="description" name="description" placeholder="Provide Feedback" class="textbox" style="width: 450px;height:80px;background-color: whitesmoke;"></textarea></br></br>
+					<input type="submit" class="btn" value="submit" style="background-color: #8080ff; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; border-radius: 10px;"></br></br>
+				</form>
+			</h2>
+		</div>
+		</div>
+		<footer>
+			<p>Self Learning Tracker<br></p>
+		  <i style='font-size:30px' class='fas'>&#xf5da;</i>
+		</footer>
+		<script>
+			function getValue(radio) {
+				var x = document.getElementById("stars");
+				if (radio.value == "rating1")
+				{
+                	var y = x.children[0];
+					y.style.color = 'orange';
+                    if(x.children[1].style.color == "orange"){
+                    	x.children[1].style.color = "black";
+                    }
+                    if(x.children[2].style.color == "orange"){
+                    	x.children[2].style.color = "black";
+                    }
+                    if(x.children[3].style.color == "orange"){
+                    	x.children[3].style.color = "black";
+                    }
+                    if(x.children[4].style.color == "orange"){
+                    	x.children[4].style.color = "black";
+                    }
+					
+				}
+				else if (radio.value == "rating2")
+				{
+					var y1 = x.children[0];
+                    var y2 = x.children[1];
+                    y1.style.color = 'orange';
+                    y2.style.color = 'orange';
+                    if(x.children[2].style.color == "orange"){
+                    	x.children[2].style.color = "black";
+                    }
+                    if(x.children[3].style.color == "orange"){
+                    	x.children[3].style.color = "black";
+                    }
+                    if(x.children[4].style.color == "orange"){
+                    	x.children[4].style.color = "black";
+                    }
+				}
+				else if (radio.value == "rating3")
+				{
+					var y1 = x.children[0];
+                    var y2 = x.children[1];
+                    var y3 = x.children[2];
+                    y1.style.color = 'orange';
+                    y2.style.color = 'orange';
+                    y3.style.color = 'orange';
+                    if(x.children[3].style.color == "orange"){
+                    	x.children[3].style.color = "black";
+                    }
+                    if(x.children[4].style.color == "orange"){
+                    	x.children[4].style.color = "black";
+                    }
+				}
+				else if (radio.value == "rating4")
+				{
+					var y1 = x.children[0];
+                    var y2 = x.children[1];
+                    var y3 = x.children[2];
+                    var y4 = x.children[3];
+                    y1.style.color = 'orange';
+                    y2.style.color = 'orange';
+                    y3.style.color = 'orange';
+                    y4.style.color = 'orange';
+              		if(x.children[4].style.color == "orange"){
+                    	x.children[4].style.color = "black";
+                    }
+				}
+				else
+				{
+					var y1 = x.children[0];
+                    var y2 = x.children[1];
+                    var y3 = x.children[2];
+                    var y4 = x.children[3];
+                    var y5 = x.children[4];
+                    y1.style.color = 'orange';
+                    y2.style.color = 'orange';
+                    y3.style.color = 'orange';
+                    y4.style.color = 'orange';
+                    y5.style.color = 'orange';
+				}
+    }
+		</script>
+	</body>
+</html>

@@ -1,0 +1,228 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/8c3e50d80c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="practice.css"/>
+    <title>practice</title>
+    <style>
+        .con{
+    margin-left:250px;
+    width: 1000px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.con .card{
+    position: relative;
+    cursor: pointer;
+}
+
+.con .card .face{
+    width: 300px;
+    height: 200px;
+    transition: 0.5s;
+}
+
+.con .card .face.face1{
+    position: relative;
+    background: #0d2e42;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transform: translateY(100px);
+}
+
+.con .card:hover .face.face1{
+    background: #65156f;
+    transform: translateY(0);
+}
+
+.con .card .face.face1 .content{
+    opacity: 0.4;
+    transition: 0.5s;
+}
+
+.con .card:hover .face.face1 .content{
+    opacity: 1;
+}
+
+.con .card .face.face1 .content img{
+    max-width: 200px;
+   
+}
+
+.con .card .face.face1 .content h3{
+    margin: 10px 0 0;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.con .card .face.face2{
+    position: relative;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
+    transform: translateY(-100px);
+}
+
+.con .card:hover .face.face2{
+    transform: translateY(0);
+}
+.con .card .face.face2 .content h2{
+    margin-top: 55px;
+    padding: 0px;
+}
+
+.con .card .face.face2 .content p{
+    margin: 5px;
+    padding: 0px;
+}
+.con .card .face.face2 .content a{
+    margin: 2px 0 0;
+    display:  inline-block;
+    text-decoration: none;
+    font-weight: 900;
+    color: #333;
+    padding: 5px;
+    border: 1px solid #333;
+}
+
+.con .card .face.face2 .content a:hover{
+    background: #333;
+    color: #fff;
+}
+#header ul li{
+    display: inline;
+    position:relative;
+    top:5px;
+}
+#header ul li a{
+	border:2px solid;
+	font-size:15px;
+	float:right;
+	background-color:#ff80aa;
+	width:80px;
+	height:40px;
+	text-align:center;
+	margin:0px 20px 4px 20px;
+	font-weight:bold;
+	line-height:40px;
+	border-radius:50px;
+	transition-property:all;
+	transition-duration:0.4s;
+	transition-timing-function:linear;
+}	
+#header ul li a{
+	text-decoration:none;
+	color:white;
+}
+#header ul li a:hover{
+        background-color:#ffa64d;
+        color:#994d00;
+		border-color: #994d00;	
+}
+#header ul li a:active{
+background-color:lightgreen;
+}
+footer {
+  text-align: center;
+  padding: 3px;
+  width: 100%;
+  height: 100px;
+  background-color: rgba(0, 0, 255, 0.2);
+  color: black;
+display:block;
+margin-top: 80px;
+}
+
+    </style>
+</head>
+<body style="background-image: url('https://media.istockphoto.com/photos/green-vintage-paper-background-picture-id1370125170?b=1&k=20&m=1370125170&s=170667a&w=0&h=SfzWL2txkVK4XnkNuFYnTEo_rA4qzAMyjJ6hJLfqRfU='); background-size: 200% 200%;">
+    <div id="header" style="background-color: rgba(0, 0, 255, 0.2); width: 100%; height: 50px;">
+        <ul>
+            <li><a href="{{url_for('contact_us')}}">Contact us</a></li>
+            <li><a href="{{url_for('feedback')}}">Feedback</a></li>
+            <li><a href="http://127.0.0.1:8080/login/templates/index.php">To-do</a></li>
+            <li><a href="{{url_for('account')}}">Account</a></li>
+            <li><a href="{{url_for('home')}}">Home</a></li>
+        </ul>
+    </div><br/><br/>
+<div class="con">
+	<div class="card" style="width: 50%; float: left;margin: 0px 40px 10px 80px;">
+            <div class="face face1">
+                <div class="content">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQsAAAC9CAMAAACTb6i8AAAAk1BMVEX////+0UI1caP+zzUjaZ/+0Dz+zisrbKG6ydaEobv+0T/+6rQwb6IcZp3/7sP+zimvwdH+1FP/8c3+3YD+2nSRq8T//PT/+ev/7L3G0t3l6u5Je6YVY5zT3OP+6K3//vn+5Jz+5qT+2W7+12Q5c6D/9Nn09vadtMl7m7lrkLF9nblfia7f5eoAXJfBzteou8z+4I3lbPmoAAAD5ElEQVR4nO3b7XKiMBQGYCABqybiZ1XElbVq1Xar9391m6CtJQSVLmNmw/v86DDtdCZ5G5LjgToOAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHyzmT+9Nrfb3W63bY4O08j0eIyZNlcxpw2BMSa+UsrprrsxPSwDDow3vBxG433d0ohWlOWTSDXig+nRPVTERRLivtCnwZumx/dIMxFFgzW3XL84eNf0AB9nzkUUO3GxWWmzYNz0CB+nSz2PplcyFQ1an4UhsmBvp0t9Fo367BhyXazSqw2yEFnwqbwa6Y+SmmXh8UP03tQvi9pl4VGuqzzrmcUVyKKeWfzhUvxFzaZGWVxsTj4osviklp/2ZzH/eCqglhkyC7eXWk5MD7t60Z5zWkQ9W2UWQSvlE79veuwVO8RFtUTRORK4Z63wl+nRV6qowLwnC9cNO6bHX6FuXCqKNIvQ/RbGs+kZVGZTMopcFv7A9BQqsy2zV+iycMOx6TlUJCq7LLzGSMmCJKYnUZHXsssin0XLNT2JisyKHoUUol1nkcnClpuk9M7peXHkjINMFsSOY7Wg132FbAx3SDaLxPQ0KnGzW5FfFu+OM/AzWVhyqhb0d4tXRfzkOM/Z7cL1h6anUYly1QWjVHbIlWVhSxY77THC5AsXOTyepU/ZO9md05os3jRZMM72r4du6tLG+JjOTy9fTJQ7xOYs6Gx+5RfWQ3VVWJwFH6U/WPQ7FxOhLfw6uoGfi8KWLHL7BU2j6LyERMdv5ZOwJgv1HGEz8c1xT/fXL2ZJFmp9wcVesQ61f33rszgodedK7BSkZBS21J3TbBby83hCbs8+i/w2PY1KKK0cWVaWjsIlljwYYJmDRGwX63z9cEu4MD2Lauwzmyd/Vz+P38Ffmp5ERaZcyWJSfruwo5XjKDeJyKJdNgtr2p1KN+cnWYSW7JzSiv1TFsSO4uIkii9h8KhsFuTF9PgrNb+EUTYLP7RpVUjRjMt/HxJ0WfjaT6ypcLk2PfbqTbezlUTzWfjDdtbkrNPp2/OEXU/NwpIPGz+SWxfJ8zcLwfQIHye/XwRfwpRt22Wxm+eIJd2KeyCLi8IsfBKkHS9kIQrM9Xgi++DIwk9rbfniBbI49/EGPrJwg1O1ndQqi4J+Jzm969xr1SkLOV1tGHJhyOcFxK43wK9a594pON8ly2NP3j+2dL3v0i4Iw0+fLNvU0rtDnxTWniSoVxRCEhDdexYkPNbpBvnUGYiSmxD/TFwGZDipYxKpcb+dHAfD5XI4OCbtvh0vOgMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwH/tL82lQgxkY9YZAAAAAElFTkSuQmCC">
+                    <h3>Python</h3>
+                </div>
+            </div>
+            <div class="face face2">
+                <div class="content">
+                <h4>Sub-Topics</h4>
+                    <p>1. Variables<br>2. Strings<br>3. Lists<br>4. Functions<br>5. Loops</p>
+                    <a href = " https://www.hackerrank.com/domains/python" target = "_blank">Practice</a>
+                </div>
+            </div>
+        </div>
+        <div class="card" style="width: 50%; float: right;margin: 0px 40px 10px 80px;">
+            <div class="face face1">
+                <div class="content">
+                    <img src="https://cdn.stayhappening.com/events9/banners/7e25a949e19c7fb81ae71032a172d7f5d3f3a797e33861182bba96e313e88622-rimg-w500-h500-gmir.jpg?v=1613063891" height=140px width=200px>
+                    <h3>C++</h3>
+                </div>
+            </div>
+            <div class="face face2">
+                <div class="content">
+                <h4>Sub-Topics</h4>
+                    <p>1. Control Statements<br>2. Classes<br>3. Objects<br>4. Functions<br>5. Vectors</p>
+                    <a href = " https://www.hackerrank.com/domains/cpp" target = "_blank">Practice</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card" style="width: 50%; float: left;margin: 400px 50px 100px -900px;">
+            <div class="face face1" >
+                <div class="content">
+                    <img src="https://www.mytechmint.com/wp-content/uploads/2020/05/SQL2BTutorials2B-2BShout4Education.png" height="140px">
+                    <h3>SQL</h3>
+                </div>
+            </div>
+            <div class="face face2">
+                <div class="content">
+                <h4>Sub-Topics</h4>
+                    <p>1. Select Query<br>2. Where clause<br>3. Joins<br>4. Group by<br>5. Having clause</p>
+                    <a href = " https://www.hackerrank.com/domains/sql" target = "_blank">Practice</a>
+                </div>
+            </div>
+        </div>
+        <div class="card" style="width: 50%; float: right;margin: 400px 50px 100px 80px;">
+            <div class="face face1" >
+                <div class="content">
+                    <img src="https://4.bp.blogspot.com/-YKSlSfmPPEY/V-prUVc9p2I/AAAAAAAABJA/cSXXo3J8Jb8xjbqVx-S88WIZ_lqvVXNHgCLcB/s1600/Data-Structures-Interview-Questions-with-Answers.png" height = 140px width=170px>
+                    <h3>DS and Algorithms</h3>
+                </div>
+            </div>
+            <div class="face face2">
+                <div class="content">
+                <h4>Sub-Topics</h4>
+                    <p>1. Searching<br>2. Sorting<br>3. Linked List<br>4. Stack<br>5. Queue</p>
+                    <a href = " https://www.hackerrank.com/domains/data-structures" target = "_blank">Practice</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>Self Learning Tracker<br></p>
+      <i style='font-size:30px' class='fas'>&#xf5da;</i>
+    </footer>
+</body>
+</html>

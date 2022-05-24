@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Home </title>
+        <script src="https://kit.fontawesome.com/8c3e50d80c.js" crossorigin="anonymous"></script>
+        <style>
+            #header ul li{
+    display: inline;
+    position:relative;
+    top:5px;
+}
+#header ul li a{
+	border:2px solid;
+	font-size:15px;
+	float:right;
+	background-color:#ff80aa;
+	width:80px;
+	height:40px;
+	text-align:center;
+	margin:0px 20px 0px 20px;
+	font-weight:bold;
+	line-height:40px;
+	border-radius:50px;
+	transition-property:all;
+	transition-duration:0.4s;
+	transition-timing-function:linear;
+}	
+#header ul li a{
+	text-decoration:none;
+	color:white;
+}
+#header ul li a:hover{
+        background-color:#ffa64d;
+        color:black;
+		border-color: black;	
+}
+#header ul li a:active{
+background-color:lightgreen;
+}
+.container1 {
+  position: relative;
+  width: 50%;
+}
+
+.image {
+  display: block;
+  height:270px;
+  width:270px;
+  padding:0px
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: rgba(0, 0, 255, 0.4);;
+}
+
+.container1:hover .overlay {
+  opacity: 1;
+}
+
+.container1:hover img {
+    filter: blur(4px);
+  -webkit-filter: blur(4px);
+}
+
+.text1{
+  color: white;
+  font-size: 25px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 5px;
+}
+.row {
+      margin-left:330px;
+      margin-bottom:-50px;}
+.row:after{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+a:link {color:white;font-size: 20px;}
+a:visited {color:white;}
+
+footer {
+  text-align: center;
+  padding: 3px;
+  width: 100%;
+  height: 150px;
+  background-color: rgba(0, 0, 255, 0.2);
+  color: black;
+display:block;
+margin-top: 200px;
+}
+        </style>		
+	</head>
+    <body style="background-image: url('https://media.istockphoto.com/photos/green-vintage-paper-background-picture-id1370125170?b=1&k=20&m=1370125170&s=170667a&w=0&h=SfzWL2txkVK4XnkNuFYnTEo_rA4qzAMyjJ6hJLfqRfU='); background-size: 200% 200%;position: relative;">
+		<div id ="holder" style="width: 100%; height: 50px;">
+			<div id = "header" style="background-color: rgb(0, 0, 255, 0.2); width: 100%; height: 50px;">
+				<ul>
+          <li><a href="{{url_for('contact_us')}}">Contact us</a></li>
+          <li><a href="{{url_for('feedback')}}">Feedback</a></li>
+          <li><a href="http://127.0.0.1:8080/login/templates/index.php">To-do</a></li>
+          <li><a href="{{url_for('account')}}">Account</a></li>
+        </ul>
+			</div>
+		</div><br/><br/><br/><br/>
+<center>
+<div class="row">
+<div class="column">
+<div class="container1" style="margin: 0px 200px 50px -80px;">
+<img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Y291cnNlc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" style="display:block;width: 400px;box-shadow: 4px 4px 10px 5px rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" class="image">
+<div class="overlay">
+<div class="text1"><a href="{{url_for('courses')}}" style="text-decoration: none;">COURSES</a></div>
+</div>
+</div>
+</div>
+<div class="column">
+<div class="container1" style="margin: 0px -80px 50px 100px;">
+<img src="https://media.istockphoto.com/photos/content-marketing-content-data-blogging-media-publication-information-picture-id976370312?k=20&m=976370312&s=612x612&w=0&h=aH1MWrPGMUbxp4oLydUTWOuuDZTpUUG7gw2YBtNAOvk=" style="display:block;width: 400px;box-shadow: 4px 4px 10px 5px rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" class="image">
+<div class="overlay">
+<div class="text1"><a href="{{url_for('blog')}}" style="text-decoration: none;">BLOG</a></div>
+</div>
+</div>
+</div>
+</div>
+<br>
+<br>
+<br>
+<div class="row">
+<div class="column">
+<div class="container1" style="margin: 10px 200px 50px -80px;">
+<img src="https://media.istockphoto.com/photos/practice-makes-progress-written-on-open-agenda-picture-id623297748?b=1&k=20&m=623297748&s=170667a&w=0&h=DJ_O4bvGBc4RU-6WCzIZ4KjuO0ZwT__vM3XhWUx6H_4=" style="display:block;width: 400px;box-shadow: 4px 4px 10px 5px rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" class="image">
+<div class="overlay">
+<div class="text1"><a href="{{url_for('practice')}}" style="text-decoration: none;">PRACTICE</a></div>
+</div>
+</div>
+</div>
+<div class="column">
+<div class="container1" style="margin: 10px -80px 50px 100px;">
+<img src="https://media.istockphoto.com/photos/knowledge-base-howto-guide-picture-id1315383657?b=1&k=20&m=1315383657&s=170667a&w=0&h=V-s8t1vmAiYaCcYCMIFsHnuUXja_bR6mXNb_AKBVaqg=" style="display:block;width: 400px;box-shadow: 4px 4px 10px 5px rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" class="image">
+<div class="overlay">
+<div class="text1"><a href="{{url_for('tips')}}" style="text-decoration: none;">TIPS</a></div>
+</div>
+</div>
+</div>
+</div>
+</center>
+<footer>
+    <p><b style='font-size:20px'>Self Learning Tracker</b><br></p>
+  <i style='font-size:50px' class='fas'>&#xf5da;</i>
+</footer>
+</body>
+</html>

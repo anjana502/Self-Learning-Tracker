@@ -1,0 +1,302 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<title>Quiz</title>
+	<style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
+
+*{
+  box-sizing: border-box;
+}
+body{
+  background-color: #b8c6db;
+  background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7f7 100%);
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+#header ul li{
+    display: inline;
+    position:relative;
+    top:5px;
+}
+#header ul li a{
+	border:2px solid;
+	font-size:15px;
+	float:right;
+	background-color:#ff80aa;
+	width:80px;
+	height:40px;
+	text-align:center;
+	margin:0px 20px 0px 20px;
+	font-weight:bold;
+	line-height:40px;
+	border-radius:50px;
+	transition-property:all;
+	transition-duration:0.4s;
+	transition-timing-function:linear;
+}	
+#header ul li a{
+	text-decoration:none;
+	color:white;
+}
+#header ul li a:hover{
+        background-color:#ffa64d;
+        color:#994d00;
+		border-color: #994d00;	
+}
+#header ul li a:active{
+background-color:lightgreen;
+}
+.container1 {
+  position: relative;
+  width: 50%;
+}
+
+.image {
+  display: block;
+  height:270px;
+  width:270px;
+  padding:0px
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: #008CBA;
+}
+
+.container1:hover .overlay {
+  opacity: 1;
+}
+
+.text1{
+  color: white;
+  font-size: 25px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 5px;
+}
+.row {
+      margin-left:330px;
+      margin-bottom:-50px;}
+.row:after{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.quiz-container{
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 2px rgba(100, 100, 100, 0.1);
+  width: 600px;
+  overflow: hidden;
+}
+.quiz-header{
+  padding: 4rem;
+}
+h2{
+  padding: 1rem;
+  text-align: center;
+  margin: 0;
+}
+
+ul{
+  list-style-type: none;
+  padding: 0;
+}
+ul li{
+  font-size: 1.2rem;
+  margin: 1rem 0;
+}
+ul li label{
+  cursor: pointer;
+}
+button{
+  background-color: #03cae4;
+  color: #fff;
+  border: none;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-family: inherit;
+  padding: 1.3rem;
+}
+button:hover{
+  background-color: #04adc4;
+}
+button:focus{
+  outline: none;
+  background-color: #44b927;
+}
+    </style>		
+	</head>
+    <body>
+    <a href="{{url_for('courses_cpp')}}" style="margin-top:-510px;margin-left:- 50px;"><i style="font-size:40px" class="fa">&#xf015;</i></a>
+    <div class="quiz-container" id="quiz">
+    <div class="quiz-header">
+      <h2 id="question">Question Text</h2>
+      <ul>
+        <li>
+          <input type="radio" name="answer" id="a" class="answer">
+          <label for="a" id="a_text">Answer</label>
+        </li>
+
+        <li>
+          <input type="radio" name="answer" id="b" class="answer">
+          <label for="b" id="b_text">Answer</label>
+        </li>
+
+        <li>
+          <input type="radio" name="answer" id="c" class="answer">
+          <label for="c" id="c_text">Answer</label>
+        </li>
+
+        <li>
+          <input type="radio" name="answer" id="d" class="answer">
+          <label for="d" id="d_text">Answer</label>
+        </li>
+
+      </ul>
+    </div>
+
+    <button id="submit">Submit</button>
+
+  </div>
+</body>
+<script>
+const quizData = [
+    {
+        question: "Identify the correct extension of the user-defined header file in C++.",
+        a: ".cpp",
+        b: ".hg",
+        c: ".h",
+        d: ".hf",
+        correct: "c",
+    },
+    {
+        question: "Identify the incorrect constructor type.",
+        a: "Friend constructor",
+        b: "Default constructor",
+        c: "Parameterized constructor",
+        d: "Copy Constructor",
+        correct: "a",
+    },
+    {
+        question: "C++ uses which approach?",
+        a: "right-left",
+        b: "top-down",
+        c: "left-right",
+        d: "bottom-up",
+        correct: "d",
+    },
+    {
+        question: "Identify the correct syntax for declaring arrays in C++.",
+        a: "array arr[10]",
+        b: "array{10}",
+        c: "int arr[10]",
+        d: "int arr",
+        correct: "c",
+    },
+    {
+        question: "Size of wchat_t is.",
+        a: "2",
+        b: "4",
+        c: "2 or 4",
+        d: "Depends on number of bits in system",
+        correct: "d",
+    },
+
+
+];
+
+const quiz= document.getElementById('quiz')
+const answerEls = document.querySelectorAll('.answer')
+const questionEl = document.getElementById('question')
+const a_text = document.getElementById('a_text')
+const b_text = document.getElementById('b_text')
+const c_text = document.getElementById('c_text')
+const d_text = document.getElementById('d_text')
+const submitBtn = document.getElementById('submit')
+
+
+let currentQuiz = 0
+let score = 0
+
+loadQuiz()
+
+function loadQuiz() {
+
+    deselectAnswers()
+
+    const currentQuizData = quizData[currentQuiz]
+
+    questionEl.innerText = currentQuizData.question
+    a_text.innerText = currentQuizData.a
+    b_text.innerText = currentQuizData.b
+    c_text.innerText = currentQuizData.c
+    d_text.innerText = currentQuizData.d
+}
+
+function deselectAnswers() {
+    answerEls.forEach(answerEl => answerEl.checked = false)
+}
+
+function getSelected() {
+    let answer
+    answerEls.forEach(answerEl => {
+        if(answerEl.checked) {
+            answer = answerEl.id
+        }
+    })
+    return answer
+}
+
+
+submitBtn.addEventListener('click', () => {
+    const answer = getSelected()
+    if(answer) {
+       if(answer === quizData[currentQuiz].correct) {
+           score++
+       }
+
+       currentQuiz++
+
+       if(currentQuiz < quizData.length) {
+           loadQuiz()
+       } else {
+           quiz.innerHTML = `
+           <h2>You answered ${score}/${quizData.length} questions correctly</h2>
+
+           <button onclick="location.reload()">Reload</button>
+           `
+       }
+    }
+})  
+</script>
+  </html>

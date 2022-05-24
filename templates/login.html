@@ -1,0 +1,29 @@
+<!-- Store this code in 'login.html' file inside the 'templates' folder -->
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> Login </title>		
+	</head>
+	<body style="background-image: url('https://img.freepik.com/free-vector/green-sand-paper_53876-86281.jpg?t=st=1649131477~exp=1649132077~hmac=e386d2536f17bd8a96ec1a1b7abef3426c3ee8119696fb0847b4af313f97b210&w=996'); background-size: 200% 200%;"></br></br></br></br></br>
+		<div align="center">
+			<div class="msg" align = "center" style="font-family: Arial, Helvetica, sans-serif;font-size: 20px;padding-bottom: 30px;">{{ msg }}</div>
+		<div align="center" class="border" style="background-color: whitesmoke;border-color: whitesmoke;width: 1000px;height:500px;border-radius: 50px;">
+			<a href="#"><img src="https://img.freepik.com/free-vector/happy-freelancer-with-computer-home-young-man-sitting-armchair-using-laptop-chatting-online-smiling-vector-illustration-distance-work-online-learning-freelance_74855-8401.jpg?size=626&ext=jpg&ga=GA1.2.1352725055.1649127198" alt="login image" width="500px;" height="500px;"align="left"style="border-radius:50px;"></a>
+			<div class="header" style="padding:20px;">
+				<h1 class="word" style="font-family: Arial, sans-serif; color: #8080ff;">Login</h1>
+				<h4 class="word" style="font-family: Arial, sans-serif; color: #8080ff;">Please login to continue</h4>
+			</div>
+			<h2 class="word">
+				<form action="{{ url_for('login') }}" method="post">
+					<input id="username" name="username" type="text" placeholder="Username" class="textbox" style="width: 250px;height:30px;outline: 0;border-width: 0 0 2px;background-color: whitesmoke;"/></br></br>
+					<input id="password" name="password" type="password" placeholder="Password" class="textbox" style="width: 250px;height:30px;outline: 0;border-width: 0 0 2px;background-color: whitesmoke;"/></br></br>
+					<input type="submit" class="btn" value="Sign In" style="background-color: #8080ff; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; border-radius: 10px;"></br></br>
+				</form>
+			</h2>
+			<p class="bottom" style="font-family: Arial, sans-serif;">Dont't have an account? <a class="bottom" href="{{url_for('register')}}"> Sign Up here</a></p>
+		</div>
+		</div>
+	</body>
+</html>

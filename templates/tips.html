@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> Tips </title>
+		<link rel="stylesheet" type="text/css" href="tips.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://kit.fontawesome.com/8c3e50d80c.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+    html {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+body{
+    font-family: Arial, Tahoma, Geneva, Brush Script MT, sans-serif;
+    margin:0;
+    background-color:black;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-size: 100% 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+#header ul li{
+        display: inline;
+        position:relative;
+        top:5px;
+    }
+    #header ul li a{
+        border:2px solid;
+        font-size:15px;
+        float:right;
+        background-color:#ff80aa;
+        width:80px;
+        height:40px;
+        text-align:center;
+        margin:0px 20px 4px 20px;
+        font-weight:bold;
+        line-height:40px;
+        border-radius:50px;
+        transition-property:all;
+        transition-duration:0.4s;
+        transition-timing-function:linear;
+    }	
+    #header ul li a{
+        text-decoration:none;
+        color:white;
+    }
+    #header ul li a:hover{
+            background-color:#ffa64d;
+            color:#994d00;
+            border-color: #994d00;	
+    }
+    #header ul li a:active{
+    background-color:lightgreen;
+    }
+
+a.one:link {color:#ff0000;font-size: 100px;}
+a.one:visited {color:#0000ff;}
+a.one:hover {font-size:150%;}
+
+a.two:link {color:#ff0000;}
+a.two:visited {color:#0000ff;}
+a.two:hover {font-size:150%;}
+
+a.three:link {color:#ff0000;}
+a.three:visited {color:#0000ff;}
+a.three:hover {font-size:150%;}
+
+a.four:link {color:#ff0000;}
+a.four:visited {color:#0000ff;}
+a.four:hover {font-size:150%;}
+footer {
+    text-align: center;
+    padding: 3px;
+    width: 100%;
+    height: 120px;
+    background-color: rgba(0, 0, 255, 0.2);
+    color: black;
+  display:block;
+  }
+
+p{
+  
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size:2vw;
+      
+}
+ 
+        </style>		
+	</head>
+    <body style="background-image: url('https://media.istockphoto.com/photos/green-vintage-paper-background-picture-id1370125170?b=1&k=20&m=1370125170&s=170667a&w=0&h=SfzWL2txkVK4XnkNuFYnTEo_rA4qzAMyjJ6hJLfqRfU='); background-size: 200% 200%;">
+
+        <div id="header" style="background-color: rgba(0, 0, 255, 0.2); width: 100%; height: 50px;">
+			<ul>
+				<li><a href="{{url_for('contact_us')}}">Contact us</a></li>
+				<li><a href="{{url_for('feedback')}}">Feedback</a></li>
+				<li><a href="http://127.0.0.1:8080/login/templates/index.php">To-do</a></li>
+				<li><a href="{{url_for('account')}}">Account</a></li>
+				<li><a href="{{url_for('home')}}">Home</a></li>
+			</ul>
+		</div><br/><br/>
+        <p style="text-align:center;font-size:50px;"><strong>Here are some tips to make a plan of study</strong></p>
+        <br>
+        <br>
+        <center><img src="https://images.unsplash.com/photo-1611663671209-772c4073b5b4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80" style="width:300px;height:300px;" ></center>
+        <center><p><strong>"Focus On The Fundamentals"</strong></p><br></center>
+        <center><img src="https://images.unsplash.com/photo-1614899099690-3bd319d25f99?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" style="width:300px;height:300px;"></center>
+        <center><p><strong>"Put Your Knowledge Into Action"</strong></p><br></center>
+        <center><img src="https://images.unsplash.com/photo-1618218168350-6e7c81151b64?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"  style="width:300px;height:300px;"></center>
+        <center><p><strong>"Learn To Ask For Help"</strong></p><br></center>
+        <center><img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=872&q=80" style="width:300px;height:300px;"></center>
+        <center><p><strong>"Learn How To Code By Hand"</strong></p><br></center>
+        <center><img src="https://images.unsplash.com/photo-1551817958-11e0f7bbea9c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" style="width:300px;height:300px;"></center>
+        <center><p><strong>"Check Out Helpful Online Coding Resources"</strong></p><br></center>
+        <center><img src="https://images.unsplash.com/photo-1606840342018-8f1c049681bf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=327&q=80" style="width:300px;height:300px;"></center>
+        <center><p><strong>"Do More Than Just Read Sample Code"</strong></p><br></center>
+        <center><img src="https://thumbs.dreamstime.com/b/take-break-text-yellow-paper-top-computer-keyboard-take-break-text-yellow-paper-121510661.jpg" style="width:300px;height:300px;"></center>
+        <center><p><strong>"Take Breaks"</strong></p></center>
+        <footer>
+            <h3>Self Learning Tracker<br></h3>
+          <i style='font-size:30px' class='fas'>&#xf5da;</i>
+        </footer>
+    </body>
+    </html>

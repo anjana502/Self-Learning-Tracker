@@ -1,0 +1,31 @@
+<!-- Store this code in 'register.html' file inside the 'templates' folder -->
+<!DOCTYPE html>
+<html lang="UTF-8">
+	<head>
+		<meta charset="UTF-8">
+		<title> Register </title>	
+	</head>
+	<body style="background-image: url('https://img.freepik.com/free-vector/green-sand-paper_53876-86281.jpg?t=st=1649131477~exp=1649132077~hmac=e386d2536f17bd8a96ec1a1b7abef3426c3ee8119696fb0847b4af313f97b210&w=996'); background-size: 200% 200%;"></br></br></br></br></br>
+		<div align="center">
+			<div class="msg" align = "center" style="font-family: Arial, Helvetica, sans-serif;font-size: 20px;padding-bottom: 30px;">{{ msg }}</div>
+		<div align="center" class="border" style="background-color: whitesmoke;border-color: whitesmoke;width: 1000px;height:600px;border-radius: 50px; margin-bottom: 50px;">
+			<a href="#"><img src="https://media.istockphoto.com/vectors/woman-with-laptop-sitting-in-nature-and-leaves-concept-illustration-vector-id1139913278?k=20&m=1139913278&s=612x612&w=0&h=Ue0Nh74fYCnNd5hfwBCLwJ2VeZqjXxnI5iEXqqTLXb8=" alt="signup image" width="500px;" height="500px;" align="left"style="border-radius:50px; margin-top: 50px;"></a>
+			<div class="header" style="padding:20px;">
+				<h1 class="word" style="font-family: Arial, sans-serif; color: #8080ff;">Register</h1>
+				<h4 class="word" style="font-family: Arial, sans-serif; color: #8080ff;">Join to start your learning!</h4>
+			</div>
+			<h2 class="word">
+				<form action="{{ url_for('register') }}" method="post">
+					<input id="username" name="username" type="text" placeholder="Username" class="textbox" style="width: 250px;height:30px;outline: 0;border-width: 0 0 2px;background-color: whitesmoke;"/></br></br>
+					<input id="email" name="email" type="text" placeholder="Email ID" class="textbox"style="width: 250px;height:30px;outline: 0;border-width: 0 0 2px;background-color: whitesmoke;"/></br></br>
+					<input id="college" name="college" type="text" placeholder="College" class="textbox"style="width: 250px;height:30px;outline: 0;border-width: 0 0 2px;background-color: whitesmoke;"/></br></br>
+					<input id="branch" name="branch" type="text" placeholder="Branch" class="textbox"style="width: 250px;height:30px;outline: 0;border-width: 0 0 2px;background-color: whitesmoke;"/></br></br>
+					<input id="password" name="password" type="password" placeholder="Password" class="textbox" style="width: 250px;height:30px;outline: 0;border-width: 0 0 2px;background-color: whitesmoke;"/></br></br>
+					<input type="submit" class="btn" value="Sign Up" style="background-color: #8080ff; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; border-radius: 10px;"></br>
+				</form>
+			</h2>
+			<p class="bottom" style="font-family: Arial, sans-serif;">Already have an account? <a class="bottom" href="{{url_for('login')}}"> Sign In here</a></p>
+		</div>
+		</div>
+	</body>
+</html>

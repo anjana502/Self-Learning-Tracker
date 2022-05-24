@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title></title>
+</head>
+<script src="https://kit.fontawesome.com/8c3e50d80c.js" crossorigin="anonymous"></script>
+<style>
+    body
+    {
+        background-image: url('https://media.istockphoto.com/photos/green-vintage-paper-background-picture-id1370125170?b=1&k=20&m=1370125170&s=170667a&w=0&h=SfzWL2txkVK4XnkNuFYnTEo_rA4qzAMyjJ6hJLfqRfU='); 
+        background-size: 1400% 1400%;
+    }
+    #blog {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 800px;
+  margin: 50px 20px 80px 355px;
+}
+
+#blog td, #blog th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#blog tr:nth-child(even){background-color: #f2f2f2;}
+#blog tr:nth-child(odd){background-color: #ddd;}
+
+#blog tr:hover {background-color: #ddd;}
+
+#blog th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: rgba(102, 0, 204, 0.4);
+  color: white;
+}
+.btn{
+	color:#fff;
+	background-color:#f30a0a;
+	outline: none;
+    border: 0;
+    color: #fff;
+	padding:10px 20px;
+	text-transform:uppercase;
+	margin-top:50px;
+	border-radius:2px;
+	cursor:pointer;
+	position:relative;
+    text-decoration: none;
+}
+#header ul li{
+    display: inline;
+    position:relative;
+    top:5px;
+}
+#header ul li a{
+	border:2px solid;
+	font-size:15px;
+	float:right;
+	background-color:#ff80aa;
+	width:80px;
+	height:40px;
+	text-align:center;
+	margin:0px 20px 4px 20px;
+	font-weight:bold;
+	line-height:40px;
+	border-radius:50px;
+	transition-property:all;
+	transition-duration:0.4s;
+	transition-timing-function:linear;
+}	
+#header ul li a{
+	text-decoration:none;
+	color:white;
+}
+#header ul li a:hover{
+        background-color:#ffa64d;
+        color:#994d00;
+		border-color: #994d00;	
+}
+#header ul li a:active{
+background-color:lightgreen;
+}
+
+
+footer {
+  text-align: center;
+  padding: 3px;
+  width: 100%;
+  height: 100px;
+  background-color: rgba(0, 0, 255, 0.2);
+  color: black;
+display:block;
+margin-top: 200px;
+}
+
+</style>
+<body>
+    <div id="header" style="background-color: rgba(0, 0, 255, 0.2); width: 100%; height: 50px;">
+        <ul>
+            <li><a href="{{url_for('contact_us')}}">Contact us</a></li>
+            <li><a href="{{url_for('feedback')}}">Feedback</a></li>
+            <li><a href="http://127.0.0.1:8080/login/templates/index.php">To-do</a></li>
+            <li><a href="{{url_for('account')}}">Account</a></li>
+            <li><a href="{{url_for('home')}}">Home</a></li>
+        </ul>
+    <center><p>{{ msg }}</p></center><br>
+    <p class="bottom" style="font-family: Arial, sans-serif; margin-left: 580px;margin-top: 100px;">View your posts <a class="btn" href="{{url_for('blog_user')}}">{{ session.username }}'s posts</a></p>
+    <table id="blog"> 
+        <thead> 
+        <tr> 
+            <th style="width: 5%;">Id</th> 
+            <th style="width: 20%;">User</th> 
+            <th style="width: 40%;">Description</th> 
+            <th style="width: 20%;">Topic</th>
+            <th style="width: 20%;">Date</th>
+        </tr> 
+        </thead> 
+        <tbody> 
+            {% for row in data %}  
+                <tr> 
+                    <td>b{{ row[0] }}</td>
+                    <td>{{ row[1] }}</td>
+                    <td>{{ row[2] }}</td>
+                    <td>{{ row[4] }}</td>
+                    <td>{{ row[3] }}</td>
+                </tr> 
+            {% endfor %} 
+        </tbody> 
+    </table> 
+    <p class="bottom" style="font-family: Arial, sans-serif; margin-left: 600px;">Have something to share? <a class="btn" href="{{url_for('blog_add')}}">Add Post</a></p>
+    <footer>
+        <p>Self Learning Tracker<br></p>
+      <i style='font-size:30px' class='fas'>&#xf5da;</i>
+    </footer>
+</body>
+</html>
